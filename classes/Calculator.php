@@ -1,14 +1,24 @@
 <?php
-namespace mytest;
+declare(strict_types=1);
+
+//namespace mytest;
+
 
 class Calculator
 {
+	private $a;
+	private $b;
+	
 	/**
 	 * Constructor
+	 * 
+	 * @param number $a
+	 * @param number $b
 	 */
-	function __construct()
+	function __construct( $a, $b )
 	{
-		
+		$this->a = $a;
+		$this->b = $b;
 	}
 	
 	/**
@@ -22,51 +32,44 @@ class Calculator
 	/**
 	 * Calculate the sum of two numbers
 	 * 
-	 * @param number $a
-	 * @param number $b
 	 * @return number
 	 */
-	function add( $a, $b )
+	static function add( $a, $b )
 	{
-		return $a + $b;
+		return new self( $a, $b );
+		//return $this->a + $this->b;
 	}
 	
 	/**
 	 * Calculates the difference between two numbers
 	 * 
-	 * @param number $a
-	 * @param number $b
 	 * @return number
 	 */
-	function subtraction( $a, $b )
+	function subtraction()
 	{
-		return $a - $b;
+		return $this->a - $this->b;
 	}
 	
 	/**
 	 * Multiplying two numbers
 	 * 
-	 * @param number $a
-	 * @param number $b
 	 * @return number
 	 */
-	function multiplication( $a, $b )
+	function multiplication()
 	{
-		return $a * $b;
+		return $this->a * $this->b;
 	}
 	
 	/**
 	 * Dividing one number from another
 	 * 
-	 * @param number $a
-	 * @param number $b
 	 * @return number
 	 */
-	function division( $a, $b )
+	function division()
 	{
-		if( $b != 0 )
+		if( $this->b != 0 && $this->b != NULL )
 		{
-			return $a / $b;
+			return $this->a / $this->b;
 		}
 		else
 		{
