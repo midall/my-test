@@ -5,11 +5,10 @@ This repository is my first (serious) attempt to create, step-by-step, a basic P
 This code it is not useful to anyone looking for a PHPUnit testing wrapper, it is just simple example of installing and using PHPUnit.
 
 ## Programming Languages
-The languages that used are:
+Main programming language:
 - PHP
-- HTML
 
-## Instalation
+## Installation
 Below are the steps to produce this example PHPUnit application:
 - Copy the files to root folder of your server (e.g. htdocs, www )
 - Install PHPUnit (here the version for Windows was used) following the instructions here: [PHPUnit installation for Windows](https://phpunit.de/manual/current/en/installation.html#installation.phar.windows) 
