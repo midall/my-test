@@ -25,10 +25,16 @@ Below are the steps to produce this example PHPUnit application:
 ```
 
 - PHPUnit version is the latest stable at the time of writing this code (of course you can modify the PHPUnit version)
-- Then via command line and using composer install PHPUnit with the command (from the root folder): composer install
+- Then via command line and using composer install PHPUnit with the command (from the root folder): 
+```sh
+$ composer install
+```
 - From that point you are ready to create your application classes and test them with PHPUnit
 - For this sample code the "classes" folder includes the apllication's classes and the folder "testing" the PHPUnit testing classes
-- For calling the test class execute the "phpunit ClassNameTest"
+- For calling the test class execute the following:
+```sh
+$ phpunit ClassNameTest
+```
 
 # Test Environment
 - Apache 2.4.23
