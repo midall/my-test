@@ -35,6 +35,9 @@ final class CalculatorTest extends TestCase
 		$calc = new Calculator( $x, $y );
 		$this->assertEquals( 9, $calc->add() );
 		$this->assertFalse( 8 == $calc->add() );
+		$this->assertGreaterThan( $x, $calc->add());
+		$this->assertGreaterThan( $y, $calc->add());
+		$this->assertInternalType( 'int', $calc->add() );
 	}
 
 	/**
@@ -47,6 +50,9 @@ final class CalculatorTest extends TestCase
 		$calc = new Calculator( $x, $y );
 		$this->assertEquals( 10.1, $calc->add() );
 		$this->assertFalse( 11.9 == $calc->add() );
+		$this->assertGreaterThan( $x, $calc->add());
+		$this->assertGreaterThan( $y, $calc->add());
+		$this->assertInternalType( 'float', $calc->add() );
 	}
 
 	/**
@@ -59,6 +65,7 @@ final class CalculatorTest extends TestCase
 		$calc = new Calculator( $x, $y );
 		$this->assertEquals( 1, $calc->subtraction() );
 		$this->assertFalse( 5 == $calc->subtraction() );
+		$this->assertInternalType( 'int', $calc->subtraction() );
 	}
 
 	/**
@@ -71,6 +78,7 @@ final class CalculatorTest extends TestCase
 		$calc = new Calculator( $x, $y );
 		$this->assertEquals( 1.1, $calc->subtraction() );
 		$this->assertFalse( 2.3 == $calc->subtraction() );
+		$this->assertInternalType( 'float', $calc->subtraction() );
 	}
 
 	/**
@@ -83,6 +91,23 @@ final class CalculatorTest extends TestCase
 		$calc = new Calculator( $x, $y );
 		$this->assertEquals( 22, $calc->multiplication() );
 		$this->assertFalse( 55 == $calc->multiplication() );
+		$this->assertGreaterThanOrEqual( $x, $calc->multiplication() );
+		$this->assertGreaterThanOrEqual( $y, $calc->multiplication() );
+		$this->assertInternalType( 'int', $calc->multiplication() );
+	}
+
+	/**
+	 * @test
+	 */
+	public function testMultiplicationCouple()
+	{
+		$x = 94;
+		$y = 35;
+		$calc1 = new Calculator( $x, $y );
+		$result1 = $calc1->multiplication();
+		$calc2 = new Calculator( $y, $x );
+		$result2 = $calc2->multiplication();
+		$this->assertTrue( $result1 == $result2 );
 	}
 
 	/**
@@ -95,6 +120,9 @@ final class CalculatorTest extends TestCase
 		$calc = new Calculator( $x, $y );
 		$this->assertEquals( 24.42, $calc->multiplication() );
 		$this->assertFalse( 23.58 == $calc->multiplication() );
+		$this->assertGreaterThanOrEqual( $x, $calc->multiplication() );
+		$this->assertGreaterThanOrEqual( $y, $calc->multiplication() );
+		$this->assertInternalType( 'float', $calc->multiplication() );
 	}
 
 	/**
@@ -107,6 +135,9 @@ final class CalculatorTest extends TestCase
 		$calc = new Calculator( $x, $y );
 		$this->assertEquals( 4, $calc->division() );
 		$this->assertFalse( 8 == $calc->division() );
+		$this->assertLessThanOrEqual( $x, $calc->division() );
+		$this->assertInternalType( 'int', $calc->division() );
+		
 	}
 
 	/**
@@ -119,6 +150,19 @@ final class CalculatorTest extends TestCase
 		$calc = new Calculator( $x, $y );
 		$this->assertEquals( 8, $calc->division() );
 		$this->assertFalse( 2.5 == $calc->division() );
+		$this->assertInternalType( 'float', $calc->division() );
+	}
+
+	/**
+	 * @test
+	 */
+	public function testDivisionZero()
+	{
+		$x = 86;
+		$y = 0;
+		$calc = new Calculator( $x, $y );
+		$result = $calc->division();
+		$this->assertNull( $result );
 	}
 }
 ?>
