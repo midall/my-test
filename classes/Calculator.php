@@ -34,10 +34,9 @@ class Calculator
 	 * 
 	 * @return number
 	 */
-	static function add( $a, $b )
+	function add()
 	{
-		return new self( $a, $b );
-		//return $this->a + $this->b;
+		return $this->a + $this->b;
 	}
 	
 	/**
@@ -57,7 +56,8 @@ class Calculator
 	 */
 	function multiplication()
 	{
-		return $this->a * $this->b;
+		$result = $this->a * $this->b;
+		return $result;
 	}
 	
 	/**
