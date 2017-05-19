@@ -35,10 +35,10 @@ $ composer install
 $ phpunit ClassNameTest
 ```
 
-# Test Environment
+## Test Environment
 - Apache 2.4.23
 - PHP 7.0.10
 
-# About me
+## About me
 - :link: Website: [ntallas.eu](https://ntallas.eu)
 - :link: GitHub: [midall](https://github.com/midall)
