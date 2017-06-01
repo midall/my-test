@@ -1,4 +1,4 @@
-# My-TEST project
+# MyTEST project
 
 ## Description
 This repository is my first (serious) attempt to create, step-by-step, a basic PHPUnit testing application.
